@@ -109,11 +109,12 @@ public class WizardRepository {
             while (resultSet.next()) {
                 Long id = resultSet.getLong("id");
                 String firstName = resultSet.getString("first_name");
+                String lastName_out = resultSet.getString("last_name");
                 Date birthday = resultSet.getDate("birthday");
                 String birthPlace = resultSet.getString("birth_place");
                 String biography = resultSet.getString("biography");
                 boolean muggle = resultSet.getBoolean("is_muggle");
-                wizards.add(new Wizard(id, firstName, lastName, birthday, birthPlace, biography, muggle));
+                wizards.add(new Wizard(id, firstName, lastName_out, birthday, birthPlace, biography, muggle));
             }
             return wizards;
         } catch (SQLException e) {
